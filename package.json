@@ -1,0 +1,22 @@
+{
+  "name": "electron_textapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "husky": {
+    "hooks": {
+      "commit-msg" : "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "electron": "^27.0.3",
+    "husky": "^8.0.3"
+  }
+}
