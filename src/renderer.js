@@ -34,3 +34,15 @@ window.electronAPI.savedFileStatus((event, status) => {
     textarea.style.backgroundColor = '';
   }, 250);
 });
+
+window.electronAPI.saveClicked((event, text) => {
+  let textToSave = textarea.value;
+  console.log(textToSave);
+  window.electronAPI.saveText(textToSave);
+});
+
+window.electronAPI.saveAsClicked((event, text) => {
+  let textToSave = textarea.value;
+  console.log(textToSave);
+  window.electronAPI.saveText(textToSave);
+});
