@@ -20,3 +20,17 @@ saveButton.addEventListener('click', () => {
   console.log(text);
   window.electronAPI.saveText(text);
 });
+
+window.electronAPI.savedFileStatus((event, status) => {
+  if (status === 'success') {
+    console.log('note saved successfully');
+    textarea.style.backgroundColor = '#B2FF99';
+  } else {
+    console.log('error saving text');
+    textarea.style.backgroundColor = '#FF8989';
+  }
+
+  setTimeout(() => {
+    textarea.style.backgroundColor = '';
+  }, 250);
+});

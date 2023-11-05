@@ -29,6 +29,7 @@ ipcMain.on('saveText', async (event, text) => {
     const { filePath } = await dialog.showSaveDialog(win, {
       defaultPath: 'filename.txt',
     });
+    win.webContents.send('saved', 'cancelled/failed');
 
     filePathToSave = filePath === '' ? undefined : filePath;
   }
@@ -39,6 +40,7 @@ ipcMain.on('saveText', async (event, text) => {
     await fs.writeFile(filePathToSave, text, (err) => {
       if (err) console.log('there was an error: ', err);
       console.log('file has been saved\n');
+      win.webContents.send('saved', 'success');
     });
   }
 });
